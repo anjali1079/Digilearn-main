@@ -1,0 +1,54 @@
+@import "../../styles/variables";
+@import "../../styles/breakpoints";
+@import "../../styles/main";
+
+.why-choose-us {
+  height: 689px;
+  width: 100%;
+  padding: 80px;
+
+  .primary-container > p {
+    @include pageHeadline;
+  }
+
+  .secondary-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 79px;
+  }
+}
+
+@include media-breakpoint-down(xxl) {
+  .why-choose-us {
+    padding: 80px 15px;
+
+    .secondary-container {
+      gap: 12px;
+    }
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .why-choose-us {
+    height: fit-content;
+  }
+  .why-choose-us > .secondary-container {
+    display: grid;
+    grid-template-columns: 325px 325px;
+
+    .experience-card {
+      width: auto;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .why-choose-us {
+    padding: 36px 24px;
+  }
+  .why-choose-us > .secondary-container {
+    grid-template-columns: 325px;
+    margin-top: 40px;
+  }
+}

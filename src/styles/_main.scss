@@ -1,0 +1,145 @@
+@import "./variables";
+
+* {
+  /* Text rendering */
+  text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -webkit-text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* :focus {
+  outline: none !important;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Outfit", "Inter var", Roboto, Helvetica Neue, Arial, sans-serif;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-x: hidden;
+  font-feature-settings: "salt";
+}
+
+html,
+body {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  background-color: $color-white-background;
+  color: $text-color;
+  scroll-behavior: smooth !important;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+h1,
+.h1 {
+  font-size: 24px;
+}
+
+h2,
+.h2 {
+  font-size: 20px;
+}
+
+h3,
+.h3 {
+  font-size: 16px;
+}
+
+h4,
+.h4 {
+  font-size: 15px;
+}
+
+h5,
+.h5 {
+  font-size: 13px;
+}
+
+h6,
+.h6 {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: unset;
+}
+
+// Modal
+
+.modal-backdrop,
+.modal {
+  z-index: 99999;
+}
+
+// Button
+.btn-wrapper {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: $color-white-gray;
+  border: 0;
+  &:hover {
+    background-color: $color-lightgray;
+  }
+
+  svg {
+    font-size: 30px;
+    color: $color-slategray;
+    background-color: transparent;
+  }
+}
+
+// Mixins
+
+@mixin lineEllipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin pageHeadline {
+  font-family: "Plus Jakarta Sans";
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  color: $text-color;
+}
+
+@mixin primary-button {
+  height: 72px;
+  width: 307px;
+  display: flex;
+  gap: 16px;
+  border-radius: 16px;
+  background-color: $color-wine-red;
+  font-size: 20px;
+  font-family: "Inter";
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.4px;
+  color: white;
+}
