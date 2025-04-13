@@ -3,11 +3,34 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 import "./Nav.scss";
 import PropTypes from "prop-types";
 import SearchBox from "../../shared-components/Search-box/SearchBox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import netlifyIdentity from "netlify-identity-widget";
 
 const Nav = () => {
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    netlifyIdentity.init();
+
+    netlifyIdentity.on("init", user => setUser(user));
+    netlifyIdentity.on("login", user => {
+      setUser(user);
+      netlifyIdentity.close();
+    });
+    netlifyIdentity.on("logout", () => setUser(null));
+
+    netlifyIdentity.init();
+  }, []);
+
+  const handleLoginClick = () => {
+    if (user) {
+      netlifyIdentity.logout();
+    } else {
+      netlifyIdentity.open();
+    }
+  };
 
   const handleCloseSearchModal = () => setShowSearchModal(false);
   const handleShowSearchModal = () => setShowSearchModal(true);
@@ -41,7 +64,13 @@ const Nav = () => {
           </Modal.Header>
         </Modal>
         <SearchBox />
+
+        {/* 🔐 Login / Logout Button */}
+        <button className="btn btn-outline-primary ms-2" onClick={handleLoginClick}>
+          {user ? "Logout" : "Login"}
+        </button>
       </section>
+
       <section className={"sidebar-menu" + (isSidebarOpen ? " show" : "")}>
         <button className="btn-wrapper" onClick={() => setSidebarOpen(false)}>
           <IoMdClose />
