@@ -4,7 +4,6 @@ import "./Nav.scss";
 import PropTypes from "prop-types";
 import SearchBox from "../../shared-components/Search-box/SearchBox";
 import { useEffect, useState } from "react";
-import netlifyIdentity from "netlify-identity-widget";
 
 const Nav = () => {
   const [showSearchModal, setShowSearchModal] = useState(false);
