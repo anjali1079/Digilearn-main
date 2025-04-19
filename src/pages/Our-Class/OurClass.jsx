@@ -21,52 +21,47 @@ const OurClass = () => {
       <h1>Best selling class</h1>
 
       <section className="switch-wrapper-desktop">
-        {classes.map((c) => {
-          return (
-            <button
-              key={c.id}
-              onClick={() => setClass(c.id)}
-              className={
-                "switch-option" + (activeClass === c.id ? " active" : "")
-              }
-            >
-              {c.class}
-            </button>
-          );
-        })}
+        {classes.map((c) => (
+          <button
+            key={c.id}
+            onClick={() => setClass(c.id)}
+            className={"switch-option" + (activeClass === c.id ? " active" : "")}
+          >
+            {c.class}
+          </button>
+        ))}
       </section>
 
       <section className="switch-wrapper-mobile">
         <Dropdown>
           <Dropdown.Toggle>{classes[activeClass].class}</Dropdown.Toggle>
           <Dropdown.Menu>
-            {classes.map((c) => {
-              return (
-                <Dropdown.Item
-                  key={c.id}
-                  active={activeClass === c.id}
-                  onClick={() => setClass(c.id)}
-                >
-                  {c.class}
-                </Dropdown.Item>
-              );
-            })}
+            {classes.map((c) => (
+              <Dropdown.Item
+                key={c.id}
+                active={activeClass === c.id}
+                onClick={() => setClass(c.id)}
+              >
+                {c.class}
+              </Dropdown.Item>
+            ))}
           </Dropdown.Menu>
         </Dropdown>
       </section>
 
       <section className="switch-content">
-        {courseData.map((d) => {
-          return <CourseCard key={d.id} data={d} />;
-        })}
+        {courseData.map((d) => (
+          <CourseCard key={d.id} data={d} />
+        ))}
       </section>
 
-      {/* Updated button wrapped in anchor tag to link to courses.html */}
-      <a href="/courses.html">
-        <button className="btn">
-          View all class <FaArrowRightLong />
-        </button>
-      </a>
+      <div className="view-all-btn-container">
+        <a href="/courses.html">
+          <button className="btn view-all-btn">
+            View all class <FaArrowRightLong />
+          </button>
+        </a>
+      </div>
     </section>
   );
 };
