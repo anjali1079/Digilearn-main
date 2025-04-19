@@ -45,10 +45,29 @@
   gap: 24px;
 }
 
-.our-class > .btn {
-  @include primary-button;
-  font-weight: bold;
-  margin: 80px auto 0;
+.view-all-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.view-all-btn {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 14px 32px;
+  background-color: #800000;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.view-all-btn:hover {
+  background-color: #660000;
 }
 
 @include media-breakpoint-down(xl) {
@@ -94,10 +113,6 @@
         padding-block: 5px;
       }
     }
-  }
-
-  .our-class > .btn {
-    margin-top: 42px;
   }
 
   .our-class > .switch-content {
