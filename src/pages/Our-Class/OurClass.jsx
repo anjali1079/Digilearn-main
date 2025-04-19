@@ -19,6 +19,7 @@ const OurClass = () => {
     <section id="our-class" className="our-class">
       <Title title={"Our Class"} />
       <h1>Best selling class</h1>
+
       <section className="switch-wrapper-desktop">
         {classes.map((c) => {
           return (
@@ -34,6 +35,7 @@ const OurClass = () => {
           );
         })}
       </section>
+
       <section className="switch-wrapper-mobile">
         <Dropdown>
           <Dropdown.Toggle>{classes[activeClass].class}</Dropdown.Toggle>
@@ -52,15 +54,19 @@ const OurClass = () => {
           </Dropdown.Menu>
         </Dropdown>
       </section>
+
       <section className="switch-content">
         {courseData.map((d) => {
           return <CourseCard key={d.id} data={d} />;
         })}
       </section>
-      <button className="btn">
-        View all class
-        <FaArrowRightLong />
-      </button>
+
+      {/* Updated button wrapped in anchor tag to link to courses.html */}
+      <a href="/courses.html">
+        <button className="btn">
+          View all class <FaArrowRightLong />
+        </button>
+      </a>
     </section>
   );
 };
