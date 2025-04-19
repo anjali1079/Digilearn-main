@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT & Graphic Design Courses – Anjali Jogale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #222;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #ff7a59; /* Your main theme color */
+    }
+
+    .navbar a.active {
+      background-color: #800000; /* Maroon for active link */
+    }
+
+    .logo img {
+      width: 120px;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 40px 0 20px;
+      color: #800000; /* Maroon color for IT Courses heading */
+    }
+
+    .heading span {
+      color: #ff7a59; /* Highlighted part of the heading */
+    }
+
+    .class-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 50px 60px;
+    }
+
+    .class-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .class-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .class-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .class-box h3 {
+      padding: 16px 20px 5px;
+      margin: 0;
+      color: #800000; /* Maroon color for course names */
+      font-size: 1.2rem;
+    }
+
+    .class-box p {
+      padding: 0 20px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .course-info {
+      padding: 0 20px;
+      color: #777;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+
+    .class-box a.enroll-btn {
+      margin: 15px 20px 20px;
+      padding: 10px;
+      text-align: center;
+      background-color: #800000; /* Maroon color */
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .class-box a.enroll-btn:hover {
+      background-color: #660000; /* Darker maroon on hover */
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .heading {
+        font-size: 2rem;
+      }
+
+      .class-container {
+        padding: 0 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="assets/images/digilearn-logo.png" alt="Digilearn Logo">
+    </div>
+    <nav class="navbar">
+      <a href="https://anjalijogale.netlify.app#home" class="active">Home</a>
+      <a href="https://anjalijogale.netlify.app#about">About</a>
+      <a href="https://anjalijogale.netlify.app#our-class">Courses</a>
+      <a href="https://anjalijogale.netlify.app#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="our-class" id="our-class">
+    <h2 class="heading">IT & Graphic Design <span>Courses</span></h2>
+
+    <div class="class-container">
+      <!-- IT Courses -->
+      <div class="class-box">
+        <img src="assets/images/web-development.jpg" alt="Web Development">
+        <h3>Web Development</h3>
+        <p>Build responsive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+        <div class="course-info">Duration: 8 weeks</div>
+        <a href="course-web.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/data-science.jpg" alt="Data Science">
+        <h3>Data Science</h3>
+        <p>Explore data analytics, visualization, and machine learning using Python.</p>
+        <div class="course-info">Duration: 10 weeks</div>
+        <a href="course-data.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/cyber-security.jpg" alt="Cybersecurity">
+        <h3>Cybersecurity</h3>
+        <p>Learn ethical hacking, network defense, and system protection fundamentals.</p>
+        <div class="course-info">Duration: 6 weeks</div>
+        <a href="course-cyber.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/ui-ux.jpg" alt="UI/UX Design">
+        <h3>UI/UX Design</h3>
+        <p>Design intuitive, modern interfaces using Figma and best UX practices.</p>
+        <div class="course-info">Duration: 5 weeks</div>
+        <a href="course-uiux.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/cloud-computing.jpg" alt="Cloud Computing">
+        <h3>Cloud Computing</h3>
+        <p>Master AWS, Azure, and cloud deployment for scalable app architecture.</p>
+        <div class="course-info">Duration: 7 weeks</div>
+        <a href="course-cloud.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/mobile-app.jpg" alt="Mobile App Development">
+        <h3>Mobile App Development</h3>
+        <p>Build mobile apps with Flutter, and deploy them on iOS & Android platforms.</p>
+        <div class="course-info">Duration: 8 weeks</div>
+        <a href="course-mobile.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <!-- New Graphic Design Courses -->
+      <div class="class-box">
+        <img src="assets/images/graphic-design.jpg" alt="Graphic Design">
+        <h3>Graphic Design</h3>
+        <p>Learn the basics of design using Photoshop, Illustrator, and InDesign.</p>
+        <div class="course-info">Duration: 6 weeks</div>
+        <a href="course-graphic-design.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/photoshop.jpg" alt="Adobe Photoshop">
+        <h3>Adobe Photoshop</h3>
+        <p>Master Photoshop for photo editing, digital painting, and graphic creation.</p>
+        <div class="course-info">Duration: 4 weeks</div>
+        <a href="course-photoshop.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/illustrator.jpg" alt="Adobe Illustrator">
+        <h3>Adobe Illustrator</h3>
+        <p>Create vector artwork, logos, and illustrations using Illustrator.</p>
+        <div class="course-info">Duration: 5 weeks</div>
+        <a href="course-illustrator.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/indesign.jpg" alt="Adobe InDesign">
+        <h3>Adobe InDesign</h3>
+        <p>Design professional layouts for print and digital media using InDesign.</p>
+        <div class="course-info">Duration: 6 weeks</div>
+        <a href="course-indesign.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+      <div class="class-box">
+        <img src="assets/images/3d-modeling.jpg" alt="3D Modeling">
+        <h3>3D Modeling</h3>
+        <p>Learn 3D modeling techniques for games, animation, and virtual reality.</p>
+        <div class="course-info">Duration: 8 weeks</div>
+        <a href="course-3d-modeling.html" class="enroll-btn">Enroll Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Anjali Jogale. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
