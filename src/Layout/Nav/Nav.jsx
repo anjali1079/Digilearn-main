@@ -1,5 +1,6 @@
 import { Modal } from "react-bootstrap";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";  // Importing Link from react-router-dom
 import "./Nav.scss";
 import PropTypes from "prop-types";
 import SearchBox from "../../shared-components/Search-box/SearchBox";
@@ -13,8 +14,8 @@ const Nav = () => {
   useEffect(() => {
     netlifyIdentity.init();
 
-    netlifyIdentity.on("init", user => setUser(user));
-    netlifyIdentity.on("login", user => {
+    netlifyIdentity.on("init", (user) => setUser(user));
+    netlifyIdentity.on("login", (user) => {
       setUser(user);
       netlifyIdentity.close();
     });
@@ -36,18 +37,25 @@ const Nav = () => {
 
   return (
     <section className="navbar">
-      <a className="icon-box" href="">
+      {/* Logo Section */}
+      <a className="icon-box" href="/">
         <img src="/assets/logo/Logo.svg" alt="Digilearn Logo" />
       </a>
+
+      {/* Menu Toggle Button */}
       <button className="menu" onClick={() => setSidebarOpen(true)}>
         <IoMdMenu />
       </button>
+
+      {/* Desktop Navigation */}
       <section className="nav-list-box">
-        <a href="#about-us">About us</a>
-        <a href="#our-class">Our class</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
+        <Link to="/about-us">About us</Link> {/* Updated to use Link */}
+        <Link to="/our-class">Our class</Link> {/* Updated to use Link */}
+        <Link to="/blog">Blog</Link> {/* Updated to use Link */}
+        <Link to="/contact">Contact</Link> {/* Updated to use Link */}
       </section>
+
+      {/* Search Box Section */}
       <section className="search-box">
         <img
           className="cart"
@@ -70,22 +78,23 @@ const Nav = () => {
         </button>
       </section>
 
+      {/* Sidebar Menu */}
       <section className={"sidebar-menu" + (isSidebarOpen ? " show" : "")}>
         <button className="btn-wrapper" onClick={() => setSidebarOpen(false)}>
           <IoMdClose />
         </button>
         <ul className="menu-list" onClick={() => setSidebarOpen(false)}>
           <li>
-            <a href="#about-us">About us</a>
+            <Link to="/about-us">About us</Link> {/* Updated to use Link */}
           </li>
           <li>
-            <a href="#our-class">Our class</a>
+            <Link to="/our-class">Our class</Link> {/* Updated to use Link */}
           </li>
           <li>
-            <a href="#blog">Blog</a>
+            <Link to="/blog">Blog</Link> {/* Updated to use Link */}
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <Link to="/contact">Contact</Link> {/* Updated to use Link */}
           </li>
         </ul>
       </section>
@@ -94,4 +103,5 @@ const Nav = () => {
 };
 
 Nav.propTypes = { toggleModal: PropTypes.func };
+
 export default Nav;
