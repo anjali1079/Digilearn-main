@@ -1,6 +1,7 @@
 import Title from "../../shared-components/Title/Title";
 import "./AboutUs.scss";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const stats = [
   {
@@ -41,11 +42,11 @@ const AboutUs = () => {
             knowledge and skills gained through online education! The key to
             your future!
           </p>
-          {/* Learn More Button */}
+          {/* Learn More Button with Link */}
           <button className="btn">
-            <a href="/about-us.html" style={{ color: "inherit", textDecoration: "none" }}>
+            <Link to="/about-us" style={{ color: "inherit", textDecoration: "none" }}>
               Learn more <FaArrowRightLong />
-            </a>
+            </Link>
           </button>
         </section>
       </section>
