@@ -8,4 +8,14 @@ export default defineConfig({
       external: ['netlify-identity-widget'], // Marking netlify-identity-widget as external
     },
   },
+  // Enable optimized CSS output
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/styles/global.scss"; // Automatically include global styles (e.g., for smooth scrolling)
+        `,
+      },
+    },
+  },
 });
