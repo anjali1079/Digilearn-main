@@ -41,9 +41,9 @@ const AboutUs = () => {
             knowledge and skills gained through online education! The key to
             your future!
           </p>
-          {/* Updated Learn More Button for same-page scroll */}
+          {/* Updated Learn More Button linking to a static page */}
           <button className="btn">
-            <a href="#about-us" style={{ color: "inherit", textDecoration: "none" }}>
+            <a href="/learn-more.html" style={{ color: "inherit", textDecoration: "none" }}>
               Learn more <FaArrowRightLong />
             </a>
           </button>
