@@ -31,11 +31,13 @@
       justify-content: flex-start;
     }
   }
+
   .data-container > h1 {
     @include pageHeadline;
     text-align: left;
     margin-bottom: 40px;
   }
+
   .data-container > p {
     opacity: 0.7;
     font-family: "Inter";
@@ -45,8 +47,31 @@
     color: $text-color;
     margin-bottom: 17px;
   }
+
   .data-container > .btn {
     @include primary-button;
+    display: inline-flex;
+    align-items: center;
+    background-color: $color-primary;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-wine-red;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
   }
 }
 
@@ -62,6 +87,7 @@
     padding-inline: 10px;
     min-width: 230px;
   }
+
   .stat-box > h1 {
     font-size: 64px;
     font-family: "Plus Jakarta Sans";
@@ -74,6 +100,7 @@
       color: $color-wine-red;
     }
   }
+
   .stat-box > p {
     opacity: 0.7;
     font-family: "Inter";
@@ -98,9 +125,11 @@
     .data-container {
       text-align: center;
     }
+
     .data-container > .flex-container {
       justify-content: center;
     }
+
     .data-container > .btn {
       margin: 0 auto;
     }
@@ -111,15 +140,18 @@
   .about-us {
     padding-bottom: 24px;
   }
+
   .about-us > .secondary-container {
     margin-top: 24px;
   }
+
   .about-us > .secondary-container > .stat-box {
     min-width: unset;
 
     h1 {
       font-size: 50px;
     }
+
     p {
       font-size: 16px;
     }
@@ -130,14 +162,17 @@
   .about-us {
     padding-block: 36px;
   }
+
   .about-us > .primary-container > :is(.img-container, .data-container) {
     width: 100%;
     max-width: 600px;
   }
+
   .about-us > .primary-container > .data-container > h1 {
     font-size: 5vw;
     margin-bottom: 15px;
   }
+
   .about-us > .primary-container > .data-container > p {
     line-height: 1.4;
     font-size: 18px;
@@ -155,3 +190,4 @@
     }
   }
 }
+
