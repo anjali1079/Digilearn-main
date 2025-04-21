@@ -1,5 +1,6 @@
 import { Modal } from "react-bootstrap";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";  // Importing Link from react-router-dom
 import "./Nav.scss";
 import PropTypes from "prop-types";
 import SearchBox from "../../shared-components/Search-box/SearchBox";
@@ -37,7 +38,7 @@ const Nav = () => {
   return (
     <section className="navbar">
       {/* Logo Section */}
-      <a className="icon-box" href="#">
+      <a className="icon-box" href="/">
         <img src="/assets/logo/Logo.svg" alt="Digilearn Logo" />
       </a>
 
@@ -48,10 +49,10 @@ const Nav = () => {
 
       {/* Desktop Navigation */}
       <section className="nav-list-box">
-        <a href="#about-us">About us</a>
-        <a href="#our-class">Our class</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
+        <Link to="/about-us">About us</Link> {/* Updated to use Link */}
+        <Link to="/our-class">Our class</Link> {/* Updated to use Link */}
+        <Link to="/blog">Blog</Link> {/* Updated to use Link */}
+        <Link to="/contact">Contact</Link> {/* Updated to use Link */}
       </section>
 
       {/* Search Box Section */}
@@ -79,4 +80,28 @@ const Nav = () => {
 
       {/* Sidebar Menu */}
       <section className={"sidebar-menu" + (isSidebarOpen ? " show" : "")}>
-        <button className="btn-wrapper" on
+        <button className="btn-wrapper" onClick={() => setSidebarOpen(false)}>
+          <IoMdClose />
+        </button>
+        <ul className="menu-list" onClick={() => setSidebarOpen(false)}>
+          <li>
+            <Link to="/about-us">About us</Link> {/* Updated to use Link */}
+          </li>
+          <li>
+            <Link to="/our-class">Our class</Link> {/* Updated to use Link */}
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link> {/* Updated to use Link */}
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link> {/* Updated to use Link */}
+          </li>
+        </ul>
+      </section>
+    </section>
+  );
+};
+
+Nav.propTypes = { toggleModal: PropTypes.func };
+
+export default Nav;
