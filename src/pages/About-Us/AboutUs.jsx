@@ -41,11 +41,15 @@ const AboutUs = () => {
             knowledge and skills gained through online education! The key to
             your future!
           </p>
+          {/* Learn More Button */}
           <button className="btn">
-            Learn more <FaArrowRightLong />
+            <a href="/about-us.html" style={{ color: "inherit", textDecoration: "none" }}>
+              Learn more <FaArrowRightLong />
+            </a>
           </button>
         </section>
       </section>
+
       <section className="secondary-container">
         {stats.map((s, i) => {
           return (
