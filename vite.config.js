@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['netlify-identity-widget'], // Mark as external
+      external: ['netlify-identity-widget'], // ✅ Only this is external
     },
   },
 });
