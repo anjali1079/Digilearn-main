@@ -5,7 +5,7 @@
 .about-us {
   height: 820px;
   padding: 80px;
-  background-color: $color-secondary-background;
+  background-color: $color-secondary-background;  // Using the secondary background color
 }
 
 .about-us > .primary-container {
@@ -44,7 +44,7 @@
     font-size: 20px;
     line-height: 1.8;
     letter-spacing: 0.4px;
-    color: $text-color;
+    color: $text-color;  // Using the primary text color
     margin-bottom: 17px;
   }
 
@@ -52,7 +52,7 @@
     @include primary-button;
     display: inline-flex;
     align-items: center;
-    background-color: $color-primary;
+    background-color: $color-primary;  // Using the primary color for the button
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -63,7 +63,7 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: $color-wine-red;
+      background-color: $color-wine-red;  // Using wine red for hover state
     }
 
     a {
@@ -97,7 +97,7 @@
     color: $text-color;
 
     span {
-      color: $color-wine-red;
+      color: $color-wine-red;  // Using wine red for the stat count
     }
   }
 
@@ -190,4 +190,3 @@
     }
   }
 }
-
