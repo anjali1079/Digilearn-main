@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Nav from "./Layout/Nav/Nav";
 import WhyChooseUs from "./pages/Why-Choose-Us/WhyChooseUs";
@@ -11,19 +12,20 @@ import Footer from "./Layout/Footer/Footer";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Nav />
-      <Home />
-      <WhyChooseUs />
-      <AboutUs />
-      <OurClass />
-      <Testimonial />
-      <Blog />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/why-choose-us" element={<WhyChooseUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/our-class" element={<OurClass />} />
+        <Route path="/testimonial" element={<Testimonial />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
-
       <MoveToTop />
-    </>
+    </Router>
   );
 };
 
